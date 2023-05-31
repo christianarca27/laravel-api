@@ -22,7 +22,7 @@
             <div class="input-group mb-3">
                 <label class="input-group-text" for="type_id">Tipo</label>
                 <select class="form-select @error('type_id') is-invalid @enderror" name="type_id" id="type_id" required>
-                    <option value="" selected>Nessuno</option>
+                    <option value="" selected>Scegli</option>
 
                     @foreach ($types as $type)
                         <option value="{{ $type->id }}" {{ $type->id == old('type_id') ? 'selected' : '' }}>
