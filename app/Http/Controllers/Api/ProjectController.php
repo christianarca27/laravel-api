@@ -26,7 +26,7 @@ class ProjectController extends Controller
         if (!empty($project)) {
             return response()->json([
                 'success' => true,
-                'results' => $project,
+                'result' => $project,
             ]);
         } else {
             return response()->json([
