@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isEmpty;
+
 class ProjectController extends Controller
 {
     public function index()
@@ -13,17 +15,25 @@ class ProjectController extends Controller
         // $projects = Project::all();
         $projects = Project::with('type', 'technologies')->orderByDesc('created_at')->get();
 
-        return response()->json([
-            'success' => true,
-            'results' => $projects
-        ]);
+        // dd($projects);
+
+        if (count($projects) > 0) {
+            return response()->json([
+                'success' => true,
+                'results' => $projects,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+            ]);
+        }
     }
 
     public function show($slug)
     {
         $project = Project::where('slug', $slug)->with('type', 'technologies')->first();
 
-        if (!empty($project)) {
+        if ($project) {
             return response()->json([
                 'success' => true,
                 'result' => $project,
