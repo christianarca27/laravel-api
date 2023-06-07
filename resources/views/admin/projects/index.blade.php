@@ -35,6 +35,6 @@
 
         <hr>
 
-        <a href="{{ route('admin.dashboard.home') }}">Torna alla dashboard</a>
+        <a href="{{ route('admin.dashboard') }}">Torna alla dashboard</a>
     </div>
 @endsection

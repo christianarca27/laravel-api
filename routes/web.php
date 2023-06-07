@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 })->name('home');
 
 Route::middleware('auth')->group(function () {
@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/', [DashboardController::class, 'home'])->name('dashboard.home');
+    Route::get('/', [DashboardController::class, 'home'])->name('dashboard');
 
     Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
 
