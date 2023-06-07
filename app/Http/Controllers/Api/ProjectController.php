@@ -13,9 +13,9 @@ class ProjectController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->has('type_id')) {
-            $queryParams = $request->all();
+        $queryParams = $request->all();
 
+        if ($request->has('type_id') && $queryParams['type_id']) {
             $projects = Project::with('type', 'technologies')->where('type_id', $queryParams['type_id'])->orderByDesc('created_at')->get();
         } else {
             $projects = Project::with('type', 'technologies')->orderByDesc('created_at')->get();
@@ -32,6 +32,7 @@ class ProjectController extends Controller
         } else {
             return response()->json([
                 'success' => false,
+                'error' => 'Nessun progetto trovato...',
             ]);
         }
     }
@@ -48,6 +49,7 @@ class ProjectController extends Controller
         } else {
             return response()->json([
                 'success' => false,
+                'error' => 'Progetto non esistente!',
             ]);
         }
     }
