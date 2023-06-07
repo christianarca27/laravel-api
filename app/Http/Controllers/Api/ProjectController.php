@@ -16,9 +16,9 @@ class ProjectController extends Controller
         $queryParams = $request->all();
 
         if ($request->has('type_id') && $queryParams['type_id']) {
-            $projects = Project::with('type', 'technologies')->where('type_id', $queryParams['type_id'])->orderByDesc('created_at')->get();
+            $projects = Project::with('type', 'technologies')->where('type_id', $queryParams['type_id'])->orderByDesc('created_at')->paginate(9);
         } else {
-            $projects = Project::with('type', 'technologies')->orderByDesc('created_at')->get();
+            $projects = Project::with('type', 'technologies')->orderByDesc('created_at')->paginate(9);
         }
 
         $types = Type::all();
