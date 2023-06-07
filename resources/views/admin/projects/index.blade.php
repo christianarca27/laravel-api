@@ -13,7 +13,7 @@
                     <th scope="col">Slug</th>
                     <th scope="col">Tipo</th>
                     <th scope="col">URL</th>
-                    <th scope="col">Azioni</th>
+                    <th scope="col">Dettagli</th>
                 </tr>
             </thead>
             <tbody>

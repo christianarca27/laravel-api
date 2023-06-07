@@ -17,16 +17,21 @@
             @endforeach
         </div>
 
-        @if ($project->preview)
-            <img class="w-50" src="{{ asset('storage/' . $project->preview) }}" alt="Preview progetto">
-        @endif
+        <div class="project-preview text-center mb-3">
+            @if ($project->preview)
+                <img src="{{ asset('storage/' . $project->preview) }}" alt="Preview progetto">
+            @else
+                <img class="w-75" src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                    class="card-img-top" alt="Project preview">
+            @endif
+        </div>
 
         <div class="mb-3">
             <strong>Descrizione</strong>
             <p>{{ $project->description }}</p>
         </div>
 
-        <a class="d-block mb-3" href="{{ $project->url }}" target="_blank">Vai al progetto Github</a>
+        <a class="btn btn-outline-warning mb-3" href="{{ $project->url }}" target="_blank">Github</a>
 
         <div class="action d-flex gap-3 mb-3">
             <a class="btn btn-primary" href="{{ route('admin.projects.edit', $project) }}">Modifica progetto</a>
