@@ -20,7 +20,7 @@ class ProjectSeeder extends Seeder
     {
         $types = Type::all();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $newProject = new Project();
 
             $newProject->title = $generator->sentence(3);
