@@ -1,1 +1,18 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+header {
+    height: 60px;
+}
+
+main {
+    min-height: calc(100vh - 60px - 60px);
+    padding: 1rem 0;
+}
+
+footer {
+    height: 60px;
+
+    i {
+        font-size: 1.5rem;
+    }
+}
