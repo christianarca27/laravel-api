@@ -31,8 +31,10 @@
                 @enderror
             </div>
 
-            <div class="input-group mb-3">
+            <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Modifica</button>
+
+                <a class="btn btn-secondary" href="{{ route('admin.types.show', $type) }}">Annulla</a>
             </div>
         </form>
     </div>

@@ -11,7 +11,7 @@
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Slug</th>
-                    <th scope="col">Azioni</th>
+                    <th scope="col">Dettagli</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,5 +28,9 @@
         </table>
 
         <a class="btn btn-primary mb-3" href="{{ route('admin.types.create') }}">Inserisci un nuovo tipo</a>
+
+        <hr>
+
+        <a href="{{ route('admin.dashboard.home') }}">Torna alla dashboard</a>
     </div>
 @endsection

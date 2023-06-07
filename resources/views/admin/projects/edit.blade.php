@@ -95,10 +95,13 @@
                 @enderror
             </div>
 
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Modifica</button>
 
-            <button type="submit" class="btn btn-primary">Modifica</button>
+                <a class="btn btn-secondary" href="{{ route('admin.projects.show', $project) }}">Annulla</a>
+            </div>
 
-            <a class="btn btn-secondary" href="{{ route('admin.projects.show', $project) }}">Annulla</a>
+
         </form>
     </div>
 @endsection

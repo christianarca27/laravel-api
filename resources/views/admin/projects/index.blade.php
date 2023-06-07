@@ -32,5 +32,9 @@
         </table>
 
         <a class="btn btn-primary mb-3" href="{{ route('admin.projects.create') }}">Inserisci un nuovo progetto</a>
+
+        <hr>
+
+        <a href="{{ route('admin.dashboard.home') }}">Torna alla dashboard</a>
     </div>
 @endsection

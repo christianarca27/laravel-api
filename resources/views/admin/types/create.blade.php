@@ -30,8 +30,10 @@
                 @enderror
             </div>
 
-            <div class="input-group mb-3">
+            <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Inserisci</button>
+
+                <a class="btn btn-secondary" href="{{ route('admin.types.index') }}">Annulla</a>
             </div>
         </form>
     </div>
