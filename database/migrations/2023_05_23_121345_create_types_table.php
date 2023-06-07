@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('types', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name')->unique();
-            $table->string('slug');
-            $table->text('description');
+            $table->string('name', 50)->unique();
+            $table->string('slug', 50)->unique();
+            $table->text('description')->nullable();
 
             $table->timestamps();
         });
